@@ -47,12 +47,23 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    // Lock body scroll when mobile menu is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+        return () => { document.body.style.overflow = ""; };
+    }, [isOpen]);
 
     return (
         <nav
@@ -63,10 +74,10 @@ export default function Navbar() {
                     : "bg-transparent py-5"
             )}
         >
-            <div className="container mx-auto px-6 max-w-[1280px] flex items-center justify-between">
+            <div className="container mx-auto px-4 sm:px-6 max-w-[1280px] flex items-center justify-between">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 relative z-50">
-                    <div className="relative h-10 w-44">
+                    <div className="relative h-8 w-36 sm:h-10 sm:w-44">
                         <Image
                             src="/trans-logo.png"
                             alt="180DC UoBD"
@@ -129,7 +140,8 @@ export default function Navbar() {
                 {/* Mobile Toggle */}
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className="lg:hidden text-[#333] p-2 relative z-50"
+                    className="lg:hidden text-[#333] p-2 relative z-50 -mr-2"
+                    aria-label="Toggle menu"
                 >
                     {isOpen ? (
                         <X className="w-6 h-6" />
@@ -140,28 +152,72 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Menu */}
-            {isOpen && (
-                <div className="fixed inset-0 bg-white z-40 flex flex-col justify-center items-center gap-6 lg:hidden">
+            <div
+                className={cn(
+                    "fixed inset-0 bg-white z-40 lg:hidden transition-transform duration-300 ease-in-out",
+                    isOpen ? "translate-x-0" : "translate-x-full"
+                )}
+            >
+                <div className="flex flex-col pt-24 pb-8 px-6 h-full overflow-y-auto">
                     {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            href={link.href}
-                            onClick={() => setIsOpen(false)}
-                            className="text-2xl text-gray-700 hover:text-[#73B744] transition-colors font-medium"
-                        >
-                            {link.name}
-                        </Link>
+                        <div key={link.name} className="border-b border-gray-100">
+                            {link.children ? (
+                                <>
+                                    <button
+                                        onClick={() => setMobileAccordion(
+                                            mobileAccordion === link.name ? null : link.name
+                                        )}
+                                        className="flex items-center justify-between w-full py-4 text-lg text-gray-700 font-medium"
+                                    >
+                                        {link.name}
+                                        <ChevronDown
+                                            className={cn(
+                                                "w-5 h-5 text-gray-400 transition-transform duration-200",
+                                                mobileAccordion === link.name && "rotate-180"
+                                            )}
+                                        />
+                                    </button>
+                                    <div
+                                        className={cn(
+                                            "overflow-hidden transition-all duration-200",
+                                            mobileAccordion === link.name ? "max-h-60 pb-3" : "max-h-0"
+                                        )}
+                                    >
+                                        {link.children.map((child) => (
+                                            <Link
+                                                key={child.name}
+                                                href={child.href}
+                                                onClick={() => setIsOpen(false)}
+                                                className="block py-2.5 pl-4 text-base text-gray-500 hover:text-[#73B744] transition-colors"
+                                            >
+                                                {child.name}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </>
+                            ) : (
+                                <Link
+                                    href={link.href}
+                                    onClick={() => setIsOpen(false)}
+                                    className="block py-4 text-lg text-gray-700 font-medium hover:text-[#73B744] transition-colors"
+                                >
+                                    {link.name}
+                                </Link>
+                            )}
+                        </div>
                     ))}
-                    <hr className="w-16 border-gray-200" />
-                    <Link
-                        href="/hire-us"
-                        onClick={() => setIsOpen(false)}
-                        className="bg-[#73B744] text-white px-8 py-3 rounded-full text-xl font-semibold"
-                    >
-                        Work With Us
-                    </Link>
+
+                    <div className="mt-8">
+                        <Link
+                            href="/hire-us"
+                            onClick={() => setIsOpen(false)}
+                            className="block w-full text-center bg-[#73B744] text-white px-8 py-3.5 rounded-full text-lg font-semibold hover:bg-[#5a9636] transition-colors"
+                        >
+                            Work With Us
+                        </Link>
+                    </div>
                 </div>
-            )}
+            </div>
         </nav>
     );
 }

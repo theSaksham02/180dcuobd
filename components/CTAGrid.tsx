@@ -33,8 +33,8 @@ const ctaBlocks = [
 
 export default function CTAGrid() {
     return (
-        <section className="py-20 md:py-24 bg-gray-50 border-t border-gray-100">
-            <div className="container mx-auto px-6 max-w-[1280px]">
+        <section className="py-14 sm:py-20 md:py-24 bg-gray-50 border-t border-gray-100">
+            <div className="container mx-auto px-4 sm:px-6 max-w-[1280px]">
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {ctaBlocks.map((block, i) => (
                         <div key={i} className="space-y-4">

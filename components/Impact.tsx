@@ -34,7 +34,7 @@ function CountUpNumber({ end, suffix = "" }: { end: number; suffix?: string }) {
     }, [end]);
 
     return (
-        <span ref={ref} className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#73B744]">
+        <span ref={ref} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#73B744]">
             {count.toLocaleString()}{suffix}
         </span>
     );
@@ -49,13 +49,13 @@ const stats = [
 
 export default function Impact() {
     return (
-        <section className="py-24 md:py-32 bg-white" id="impact">
+        <section className="py-16 sm:py-24 md:py-32 bg-white" id="impact">
             {/* Founder Quote */}
-            <div className="container mx-auto px-6 max-w-4xl text-center mb-20">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a1a1a] mb-8 leading-tight">
+            <div className="container mx-auto px-4 sm:px-6 max-w-4xl text-center mb-12 sm:mb-20">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a1a1a] mb-6 sm:mb-8 leading-tight">
                     More Than A Decade Of Social Impact
                 </h2>
-                <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
+                <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
                     &lsquo;Why are we called 180 Degrees?&rsquo; It&apos;s because we work to turn good organisations into great organisations, challenges into opportunities, ideas into reality. We&apos;re focused on positive transformation. Transforming organisations, and, in turn, transforming lives.&rdquo;
                 </p>
                 <p className="text-gray-500 text-sm mt-4 italic">
@@ -64,8 +64,8 @@ export default function Impact() {
             </div>
 
             {/* Stats Row */}
-            <div className="container mx-auto px-6 max-w-[1280px]">
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+            <div className="container mx-auto px-4 sm:px-6 max-w-[1280px]">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-12 text-center">
                     {stats.map((stat) => (
                         <div key={stat.label}>
                             <p className="text-xs uppercase tracking-[0.2em] text-gray-500 mb-3">

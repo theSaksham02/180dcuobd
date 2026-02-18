@@ -6,11 +6,11 @@ export default function Hero() {
     return (
         <section className="relative min-h-screen flex items-center bg-white overflow-hidden">
             {/* Content */}
-            <div className="container mx-auto px-6 lg:px-16 max-w-[1280px] relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-16 max-w-[1280px] relative z-10">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
                     {/* Left — Headline */}
                     <div>
-                        <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-bold text-[#1a1a1a] leading-[1.15] tracking-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-bold text-[#1a1a1a] leading-[1.15] tracking-tight">
                             The world&apos;s{" "}
                             <span className="text-[#73B744] italic">largest</span>{" "}
                             university-based consultancy for non-profits and socially-conscious organisations
@@ -18,7 +18,7 @@ export default function Hero() {
                     </div>
 
                     {/* Right — Circular Photos */}
-                    <div className="relative hidden lg:flex justify-center items-center h-[500px]">
+                    <div className="relative hidden md:flex justify-center items-center h-[500px]">
                         {/* Large circle */}
                         <div className="absolute top-0 right-0 w-[340px] h-[340px] rounded-full overflow-hidden border-4 border-white shadow-xl z-10">
                             <Image
@@ -43,7 +43,7 @@ export default function Hero() {
 
             {/* Green Wave Divider */}
             <div className="absolute bottom-0 left-0 right-0 z-0">
-                <svg viewBox="0 0 1440 320" preserveAspectRatio="none" className="w-full h-[200px] md:h-[280px]">
+                <svg viewBox="0 0 1440 320" preserveAspectRatio="none" className="w-full h-[140px] sm:h-[200px] md:h-[280px]">
                     <path
                         fill="#73B744"
                         d="M0,160 C360,280 720,60 1080,180 C1260,240 1380,200 1440,160 L1440,320 L0,320 Z"

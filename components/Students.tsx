@@ -4,9 +4,9 @@ import Link from "next/link";
 export default function Students() {
     return (
         <section className="bg-white" id="students">
-            <div className="grid lg:grid-cols-2 min-h-[600px]">
+            <div className="grid md:grid-cols-2 min-h-[auto] md:min-h-[600px]">
                 {/* Photo Left */}
-                <div className="relative h-[400px] lg:h-auto">
+                <div className="relative h-[280px] sm:h-[350px] md:h-auto">
                     <Image
                         src="/students-group.jpg"
                         alt="180DC students at an event"
@@ -16,11 +16,11 @@ export default function Students() {
                 </div>
 
                 {/* Text Right */}
-                <div className="flex flex-col justify-center px-8 md:px-16 lg:px-20 py-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a1a] mb-6">
+                <div className="flex flex-col justify-center px-6 sm:px-8 md:px-16 lg:px-20 py-10 sm:py-16">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1a1a] mb-4 sm:mb-6">
                         Students
                     </h2>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-8 max-w-lg">
+                    <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-lg">
                         Want to make a difference while gaining valuable skills? Join 180 Degrees Consulting and become part of a global network of social impact leaders. Our university branches offer opportunities for students to work with non-profits and social enterprises, making a tangible impact in their communities.
                     </p>
                     <div className="flex flex-wrap items-center gap-6">

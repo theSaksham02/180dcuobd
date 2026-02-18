@@ -4,16 +4,16 @@ import Link from "next/link";
 export default function Clients() {
     return (
         <section className="bg-white" id="clients">
-            <div className="grid lg:grid-cols-2 min-h-[600px]">
+            <div className="grid md:grid-cols-2 min-h-[auto] md:min-h-[600px]">
                 {/* Text Left */}
-                <div className="flex flex-col justify-center px-8 md:px-16 lg:px-20 py-16 order-2 lg:order-1">
-                    <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a1a] mb-2">
+                <div className="flex flex-col justify-center px-6 sm:px-8 md:px-16 lg:px-20 py-10 sm:py-16 order-2 md:order-1">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1a1a] mb-2">
                         Clients
                     </h2>
                     <p className="text-gray-500 font-medium mb-6">
                         Scale your impact with us.
                     </p>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-8 max-w-lg">
+                    <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-lg">
                         At 180 Degrees Consulting, we understand the unique challenges facing non-profits and social enterprises. Our team of dedicated consultants provides tailored solutions to help you achieve your mission and make a positive impact in your community. Some of our previous clients include UNICEF, the Red Cross, UNHCR, World Vision and One Acre Fund, among others.
                     </p>
                     <div className="flex flex-wrap items-center gap-6">
@@ -38,7 +38,7 @@ export default function Clients() {
                 </div>
 
                 {/* Photo Right */}
-                <div className="relative h-[400px] lg:h-auto order-1 lg:order-2">
+                <div className="relative h-[280px] sm:h-[350px] md:h-auto order-1 md:order-2">
                     <Image
                         src="/clients-meeting.jpg"
                         alt="Consulting meeting with clients"

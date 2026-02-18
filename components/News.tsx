@@ -42,9 +42,9 @@ const newsItems = [
 
 export default function News() {
     return (
-        <section className="py-24 md:py-32 bg-white">
-            <div className="container mx-auto px-6 max-w-[1280px]">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-12">
+        <section className="py-16 sm:py-24 md:py-32 bg-white">
+            <div className="container mx-auto px-4 sm:px-6 max-w-[1280px]">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-8 sm:mb-12">
                     The Latest News
                 </h2>
 
@@ -55,7 +55,7 @@ export default function News() {
                             href={item.href}
                             className="group block"
                         >
-                            <div className="relative h-[220px] rounded-lg overflow-hidden mb-4 bg-gray-100">
+                            <div className="relative h-[180px] sm:h-[220px] rounded-lg overflow-hidden mb-4 bg-gray-100">
                                 <Image
                                     src={item.image}
                                     alt={item.title}

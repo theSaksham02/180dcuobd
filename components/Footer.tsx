@@ -6,11 +6,11 @@ import { Linkedin, Instagram, Youtube } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#1a1a1a] text-gray-400 py-16">
-            <div className="container mx-auto px-6 max-w-[1280px]">
-                <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <footer className="bg-[#1a1a1a] text-gray-400 py-10 sm:py-16">
+            <div className="container mx-auto px-4 sm:px-6 max-w-[1280px]">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
                     {/* Brand */}
-                    <div className="space-y-5">
+                    <div className="col-span-2 md:col-span-1 space-y-5">
                         <Link href="/" className="block relative w-40 h-10">
                             <Image
                                 src="/trans-logo.png"

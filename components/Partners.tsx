@@ -4,9 +4,9 @@ import Link from "next/link";
 export default function Partners() {
     return (
         <section className="bg-[#f8f8f8]" id="partners">
-            <div className="grid lg:grid-cols-2 min-h-[600px]">
+            <div className="grid md:grid-cols-2 min-h-[auto] md:min-h-[600px]">
                 {/* Photo Left */}
-                <div className="relative h-[400px] lg:h-auto">
+                <div className="relative h-[280px] sm:h-[350px] md:h-auto">
                     <Image
                         src="/partners-collab.jpg"
                         alt="Partnership collaboration"
@@ -16,14 +16,14 @@ export default function Partners() {
                 </div>
 
                 {/* Text Right */}
-                <div className="flex flex-col justify-center px-8 md:px-16 lg:px-20 py-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a1a] mb-4">
+                <div className="flex flex-col justify-center px-6 sm:px-8 md:px-16 lg:px-20 py-10 sm:py-16">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1a1a1a] mb-4">
                         Partners
                     </h2>
                     <p className="text-gray-500 font-medium mb-6">
                         Join our mission of transforming lives.
                     </p>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-8 max-w-lg">
+                    <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-lg">
                         Are you a corporation, foundation or government entity wishing to support the mission of 180 Degrees Consulting to empower non-profits and cultivate the next generation of social impact leaders? We would love to hear from you and discuss how we can work together!
                     </p>
                     <Link

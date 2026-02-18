@@ -10,14 +10,14 @@ export default function Marquee() {
             </div>
 
             {/* Diagonal Bands */}
-            <div className="relative py-16 md:py-24 space-y-4 -rotate-3 scale-110">
+            <div className="relative py-10 sm:py-16 md:py-24 space-y-3 sm:space-y-4 -rotate-3 scale-110">
                 {/* Band 1 */}
                 <div className="bg-[#73B744] py-4 overflow-hidden">
                     <div className="flex whitespace-nowrap animate-marquee">
                         {[...Array(10)].map((_, i) => (
                             <span
                                 key={i}
-                                className="text-white text-xl md:text-2xl font-bold mx-8 tracking-wide"
+                                className="text-white text-base sm:text-xl md:text-2xl font-bold mx-4 sm:mx-8 tracking-wide"
                             >
                                 Unlock your organisation&apos;s potential &nbsp;·&nbsp;
                             </span>
