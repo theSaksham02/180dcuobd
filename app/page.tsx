@@ -1,11 +1,15 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Hero from "@/components/Hero"; // Added Hero import
 import WhatWeDo from "@/components/WhatWeDo";
 import ConsultingModel from "@/components/ConsultingModel";
 import WhyUs from "@/components/WhyUs";
-import Link from "next/link"; // Added missing import
+import Footer from "@/components/Footer";
+
+// Reusing Vision for now as it fits the layout flow, 
+// can be renamed to Impact/CTA later if needed.
+import Vision from "@/components/Vision";
 
 export default function Home() {
   return (
@@ -15,7 +19,7 @@ export default function Home() {
       <WhatWeDo />
       <ConsultingModel />
       <WhyUs />
-      {/* Reusing existing components for now where appropriate */}
+      <Vision />
       <Footer />
     </main>
   );
