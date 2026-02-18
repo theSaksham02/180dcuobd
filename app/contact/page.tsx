@@ -6,12 +6,12 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 export default function ContactPage() {
     return (
-        <div className="min-h-screen pt-24 pb-12 px-4 bg-gray-50 flex flex-col justify-center">
-            <div className="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-12 bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+        <div className="min-h-screen pt-24 pb-12 px-4 bg-[#050505] flex flex-col justify-center">
+            <div className="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-12 bg-[#111] rounded-3xl shadow-xl overflow-hidden border border-white/10">
 
                 {/* Contact Info (Left) */}
-                <div className="bg-[#414042] p-12 text-white flex flex-col justify-between relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+                <div className="bg-[#1a1a1a] p-12 text-white flex flex-col justify-between relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-green-500/10 rounded-full blur-3xl" />
 
                     <div className="relative z-10 space-y-8">
                         <div>
@@ -35,7 +35,7 @@ export default function ContactPage() {
                     </div>
 
                     <div className="relative z-10 pt-12">
-                        <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                        <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center border border-white/5">
                             <span className="font-bold">180</span>
                         </div>
                     </div>
@@ -47,10 +47,10 @@ export default function ContactPage() {
                         <Input label="Name" placeholder="Your Name" />
                         <Input label="Email" placeholder="your@email.com" />
                         <div className="space-y-1.5">
-                            <label className="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Message</label>
-                            <textarea className="w-full h-32 rounded-xl border border-gray-200 p-4 text-sm focus:ring-2 focus:ring-[#73B744] focus:outline-none focus:border-transparent transition-all" placeholder="How can we help?" />
+                            <label className="text-xs font-bold uppercase tracking-wider text-gray-400 ml-1">Message</label>
+                            <textarea className="w-full h-32 rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white placeholder:text-gray-500 focus:ring-2 focus:ring-[#73B744] focus:outline-none focus:border-transparent transition-all" placeholder="How can we help?" />
                         </div>
-                        <Button className="w-full">Send Message</Button>
+                        <Button className="w-full font-bold">Send Message</Button>
                     </form>
                 </div>
 

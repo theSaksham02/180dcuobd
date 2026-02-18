@@ -1,19 +1,22 @@
 import Link from 'next/link';
+import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#414042] text-gray-300 py-16 border-t border-gray-800 relative z-10">
+        <footer className="bg-[#020202] text-gray-400 py-16 border-t border-white/5 relative z-10">
             <div className="container mx-auto px-6 grid md:grid-cols-4 gap-8 max-w-6xl text-sm">
                 <div className="space-y-4">
                     <Link href="/" className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                            <span className="text-[#414042] font-bold font-display text-xs">180</span>
+                        <div className="relative w-32 h-8">
+                            <Image
+                                src="/trans-logo.png"
+                                alt="180DC Logo"
+                                fill
+                                className="object-contain object-left"
+                            />
                         </div>
-                        <span className="text-xl font-bold font-display text-white">
-                            180Degrees
-                        </span>
                     </Link>
-                    <p className="leading-relaxed text-gray-400 mt-2">
+                    <p className="leading-relaxed text-gray-500 mt-2">
                         University of Birmingham Dubai Branch.
                         <br />
                         Building the next generation of social impact leaders.
@@ -47,7 +50,7 @@ export default function Footer() {
                 </div>
             </div>
 
-            <div className="container mx-auto px-6 mt-16 pt-8 border-t border-gray-700 text-center text-xs text-gray-500">
+            <div className="container mx-auto px-6 mt-16 pt-8 border-t border-white/5 text-center text-xs text-gray-600">
                 &copy; {new Date().getFullYear()} 180 Degrees Consulting UoBD. All rights reserved.
             </div>
         </footer>

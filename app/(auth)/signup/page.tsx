@@ -7,13 +7,13 @@ import { ArrowRight } from "lucide-react";
 
 export default function SignupPage() {
     return (
-        <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-gray-50">
-            <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-green-200/30 rounded-full blur-[80px] animate-blob" />
+        <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-[#050505]">
+            <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-green-500/10 rounded-full blur-[100px] animate-blob" />
 
-            <div className="w-full max-w-md bg-white/80 backdrop-blur-xl border border-white p-8 md:p-10 rounded-3xl shadow-2xl relative z-10">
+            <div className="w-full max-w-md bg-[#111]/80 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-3xl shadow-2xl relative z-10">
                 <div className="mb-8">
-                    <h1 className="text-3xl font-bold text-gray-900">Create Account</h1>
-                    <p className="text-gray-500 mt-2">Join the University of Birmingham Dubai branch.</p>
+                    <h1 className="text-3xl font-bold text-white">Create Account</h1>
+                    <p className="text-gray-400 mt-2">Join the University of Birmingham Dubai branch.</p>
                 </div>
 
                 <form className="space-y-4">
@@ -29,13 +29,13 @@ export default function SignupPage() {
                         By creating an account, you agree to our <Link href="/terms" className="text-[#73B744] underline">Terms</Link> and <Link href="/privacy" className="text-[#73B744] underline">Privacy Policy</Link>.
                     </div>
 
-                    <Button className="w-full h-12 text-lg mt-2">
+                    <Button className="w-full h-12 text-lg mt-2 font-bold">
                         Create Account <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                 </form>
 
-                <div className="mt-6 text-center text-sm text-gray-500">
-                    Already a member? <Link href="/login" className="font-bold text-[#73B744] hover:underline">Log In</Link>
+                <div className="mt-6 text-center text-sm text-gray-400">
+                    Already a member? <Link href="/login" className="font-bold text-[#73B744] hover:text-[#a3e635]">Log In</Link>
                 </div>
             </div>
         </div>

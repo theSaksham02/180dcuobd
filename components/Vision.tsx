@@ -5,14 +5,14 @@ import { Flag, Trophy, Users2 } from "lucide-react";
 
 export default function Vision() {
     return (
-        <section id="vision" className="py-24 relative overflow-hidden bg-white">
+        <section id="vision" className="py-24 relative overflow-hidden bg-[#050505]">
             {/* Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-green-50/50 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-green-500/5 rounded-full blur-[120px] pointer-events-none" />
 
             <div className="container mx-auto px-6 max-w-5xl relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-sm font-bold text-[#73B744] uppercase tracking-widest mb-3">Our Ambition</h2>
-                    <h3 className="text-3xl md:text-4xl font-bold font-display text-gray-900 leading-tight">
+                    <h3 className="text-3xl md:text-4xl font-bold font-display text-white leading-tight">
                         Long-Term Vision
                     </h3>
                 </div>
@@ -29,25 +29,25 @@ export default function Vision() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
-                            className="text-center p-8 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-lg transition-all"
+                            className="text-center p-8 rounded-3xl bg-white/5 border border-white/5 shadow-sm hover:shadow-lg hover:bg-white/10 transition-all"
                         >
-                            <div className="w-16 h-16 bg-green-100 rounded-full mx-auto flex items-center justify-center mb-6">
+                            <div className="w-16 h-16 bg-white/5 rounded-full mx-auto flex items-center justify-center mb-6">
                                 <item.icon className="w-8 h-8 text-[#73B744]" />
                             </div>
-                            <h4 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h4>
-                            <p className="text-gray-500 leading-relaxed">{item.desc}</p>
+                            <h4 className="text-xl font-bold text-white mb-2">{item.title}</h4>
+                            <p className="text-gray-400 leading-relaxed">{item.desc}</p>
                         </motion.div>
                     ))}
                 </div>
 
-                <div className="mt-20 p-12 rounded-3xl bg-[#414042] text-center relative overflow-hidden">
+                <div className="mt-20 p-12 rounded-3xl bg-[#111] text-center relative overflow-hidden border border-white/5">
                     {/* Decorative pattern/gradient */}
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
-                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-green-500/10 rounded-full blur-3xl" />
+                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
 
                     <div className="relative z-10">
                         <h4 className="text-2xl md:text-3xl font-bold text-white mb-4">Ready to make an impact?</h4>
-                        <p className="text-gray-300 mb-8 max-w-xl mx-auto">
+                        <p className="text-gray-400 mb-8 max-w-xl mx-auto">
                             Whether you are a student looking to develop elite skills or an organization seeking strategic solutions.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
