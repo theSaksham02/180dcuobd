@@ -8,12 +8,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-    { name: "About", href: "/#about" },
-    { name: "Our Work", href: "/our-work" },
-    { name: "Our Model", href: "/our-model" },
     { name: "Impact", href: "/#impact" },
-    { name: "Insights", href: "/insights" },
+    { name: "Model", href: "/our-model" },
     { name: "Team", href: "/team" },
+    { name: "Insights", href: "/insights" },
 ];
 
 export default function Navbar() {
@@ -29,15 +27,15 @@ export default function Navbar() {
     return (
         <nav className={cn(
             "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-            scrolled ? "glass py-4" : "bg-transparent py-6"
+            scrolled ? "bg-[#0B0F19]/90 backdrop-blur-sm border-b border-white/5 py-4" : "bg-transparent py-6"
         )}>
-            <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
+            <div className="container mx-auto px-6 max-w-6xl flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 group relative z-50">
+                <Link href="/" className="flex items-center gap-2 relative z-50">
                     <div className="relative h-8 w-32 md:h-10 md:w-40">
                         <Image
                             src="/trans-logo.png"
-                            alt="180DC Logo"
+                            alt="180DC UoBD"
                             fill
                             className="object-contain object-left"
                             priority
@@ -46,28 +44,27 @@ export default function Navbar() {
                 </Link>
 
                 {/* Desktop Links */}
-                <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <div className="hidden lg:flex items-center gap-8 text-sm text-gray-400">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="hover:text-white transition-colors relative group"
+                            className="hover:text-white transition-colors"
                         >
                             {link.name}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#73B744] transition-all group-hover:w-full" />
                         </Link>
                     ))}
 
-                    <div className="flex items-center gap-4 ml-4 pl-4 border-l border-white/10">
+                    <div className="flex items-center gap-4 ml-6 pl-6 border-l border-white/10">
                         <Link
                             href="/join"
-                            className="text-white hover:text-[#73B744] transition-colors"
+                            className="text-gray-400 hover:text-white transition-colors"
                         >
-                            Join Us
+                            Apply
                         </Link>
                         <Link
                             href="/hire-us"
-                            className="bg-[#73B744] text-white px-5 py-2.5 rounded-lg hover:bg-[#63a03a] transition-all shadow-lg shadow-green-900/20 font-bold tracking-wide"
+                            className="bg-white text-[#0B0F19] px-5 py-2 font-semibold text-sm hover:bg-gray-100 transition-colors"
                         >
                             Partner With Us
                         </Link>
@@ -83,13 +80,13 @@ export default function Navbar() {
                 </button>
             </div>
 
-            {/* Mobile Menu Overlay */}
+            {/* Mobile Menu */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -20 }}
+                        initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
+                        exit={{ opacity: 0, y: -10 }}
                         className="fixed inset-0 bg-[#0B0F19] z-40 flex flex-col justify-center items-center gap-8 lg:hidden"
                     >
                         {navLinks.map((link) => (
@@ -97,17 +94,17 @@ export default function Navbar() {
                                 key={link.name}
                                 href={link.href}
                                 onClick={() => setIsOpen(false)}
-                                className="text-2xl font-medium text-gray-200 hover:text-[#73B744]"
+                                className="text-2xl text-gray-300 hover:text-white transition-colors"
                             >
                                 {link.name}
                             </Link>
                         ))}
-                        <hr className="w-24 border-white/10" />
-                        <Link href="/join" onClick={() => setIsOpen(false)} className="text-xl text-white">Join Us</Link>
+                        <hr className="w-16 border-white/10" />
+                        <Link href="/join" onClick={() => setIsOpen(false)} className="text-xl text-white">Apply</Link>
                         <Link
                             href="/hire-us"
                             onClick={() => setIsOpen(false)}
-                            className="bg-[#73B744] text-white px-8 py-3 rounded-xl text-xl font-bold"
+                            className="bg-white text-[#0B0F19] px-8 py-3 text-xl font-semibold"
                         >
                             Partner With Us
                         </Link>

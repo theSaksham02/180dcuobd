@@ -1,109 +1,104 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-const pipeline = [
-    { id: 1, title: "Recruit", desc: "Top-tier talent selection" },
-    { id: 2, title: "Train", desc: "Consulting bootcamp" },
-    { id: 3, title: "Deploy", desc: "Team assignment" },
-    { id: 4, title: "Deliver", desc: "12-week analysis" },
-    { id: 5, title: "Measure", desc: "Impact quantification" },
-    { id: 6, title: "Report", desc: "Executive presentation" },
-];
+const pipeline = ["Diagnostic", "Analysis", "Solution Design", "Executive Delivery"];
 
 export default function ConsultingModel() {
     return (
-        <section className="py-32 bg-[#080B14] relative overflow-hidden">
-            <div className="container mx-auto px-6 lg:px-12 max-w-7xl relative z-10">
+        <section className="py-28 bg-[#080B14] border-t border-white/5">
+            <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
 
-                <div className="text-center max-w-3xl mx-auto mb-20">
-                    <h2 className="text-sm font-bold text-[#73B744] uppercase tracking-widest mb-4">Our Methodology</h2>
-                    <h3 className="text-4xl md:text-5xl font-display font-medium text-white mb-6">
-                        Institutional Grade Execution
-                    </h3>
-                    <p className="text-gray-400 text-lg">
-                        We follow a rigorous 12-week engagement cycle mirroring top-tier strategy firms.
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="mb-16"
+                >
+                    <p className="text-[11px] text-gray-600 uppercase tracking-[0.2em] font-medium mb-6">
+                        Engagement Model
                     </p>
-                </div>
+                    <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight max-w-xl">
+                        12-week structured engagement cycle.
+                    </h2>
+                </motion.div>
 
-                {/* Visual Pipeline - Sequential Reveal */}
-                <div className="relative mb-24 hidden md:block">
-                    {/* Connecting Line - Grows from left */}
+                {/* Horizontal Timeline — Desktop */}
+                <div className="hidden md:block relative mb-20">
+                    {/* Connecting line */}
                     <motion.div
                         initial={{ scaleX: 0 }}
                         whileInView={{ scaleX: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1.5, ease: "easeInOut" }}
-                        className="absolute top-1/2 left-0 right-0 h-px bg-white/10 -translate-y-1/2 z-0 origin-left"
+                        transition={{ duration: 1.2, ease: "easeInOut" }}
+                        className="absolute top-6 left-0 right-0 h-px bg-white/10 origin-left"
                     />
 
-                    <div className="grid grid-cols-6 relative z-10">
+                    <div className="grid grid-cols-4 relative">
                         {pipeline.map((step, i) => (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 0, y: 16 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: i * 0.2, duration: 0.5, ease: "easeOut" }} // Sequential Fade
-                                className="flex flex-col items-center text-center group"
+                                transition={{ delay: 0.3 + i * 0.2, duration: 0.5 }}
+                                className="flex flex-col items-start"
                             >
-                                <div className="w-4 h-4 rounded-full bg-[#0B0F19] border-2 border-[#73B744] mb-6 relative z-20 transition-transform duration-300 group-hover:scale-125">
-                                    <div className="absolute inset-0 bg-[#73B744] rounded-full opacity-0 group-hover:animate-ping" />
-                                </div>
-                                <h4 className="text-white font-bold font-display text-lg mb-2">{step.title}</h4>
-                                <p className="text-gray-500 text-xs uppercase tracking-wider">{step.desc}</p>
+                                <div className="w-3 h-3 rounded-full border border-white/30 bg-[#080B14] mb-8 relative z-10" />
+                                <p className="text-[11px] text-gray-600 uppercase tracking-widest mb-2">
+                                    Phase {i + 1}
+                                </p>
+                                <h3 className="text-white font-semibold text-lg">{step}</h3>
                             </motion.div>
                         ))}
                     </div>
                 </div>
 
-                {/* Mobile Pipeline */}
-                <div className="md:hidden space-y-8 mb-16 pl-4 border-l border-white/10">
+                {/* Mobile */}
+                <div className="md:hidden space-y-6 mb-16 pl-6 border-l border-white/10">
                     {pipeline.map((step, i) => (
-                        <div key={i} className="relative pl-8">
-                            <div className="absolute left-[-5px] top-2 w-2.5 h-2.5 rounded-full bg-[#73B744]" />
-                            <h4 className="text-white font-bold font-display text-lg">{step.title}</h4>
-                            <p className="text-gray-500 text-sm">{step.desc}</p>
+                        <div key={i} className="relative">
+                            <div className="absolute -left-[29px] top-1 w-2 h-2 rounded-full border border-white/30 bg-[#080B14]" />
+                            <p className="text-[11px] text-gray-600 uppercase tracking-widest mb-1">Phase {i + 1}</p>
+                            <h3 className="text-white font-semibold">{step}</h3>
                         </div>
                     ))}
                 </div>
 
-                {/* Engagement Phases */}
-                <div className="grid md:grid-cols-2 gap-12 bg-[#111827]/50 border border-white/5 p-8 md:p-12 rounded-sm">
-                    <div>
-                        <h4 className="text-2xl font-display font-bold text-white mb-6">The 12-Week Cycle</h4>
-                        <div className="space-y-6">
-                            {[
-                                { title: "Phase 1: Diagnostic", desc: "Stakeholder interviews, market mapping, and hypothesis generation." },
-                                { title: "Phase 2: Analysis", desc: "Financial modelling, benchmarking, and rigorous data analysis." },
-                                { title: "Phase 3: Solution Design", desc: "Framework development and strategic recommendation options." },
-                                { title: "Phase 4: Executive Delivery", desc: "Final board presentation and implementation roadmap." },
-                            ].map((phase, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, x: -10 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: 0.5 + (i * 0.1) }}
-                                    className="flex gap-4"
-                                >
-                                    <CheckCircle2 className="w-6 h-6 text-[#73B744] flex-shrink-0 mt-1" />
-                                    <div>
-                                        <h5 className="text-white font-bold">{phase.title}</h5>
-                                        <p className="text-gray-400 text-sm">{phase.desc}</p>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
+                {/* Details */}
+                <div className="grid md:grid-cols-2 gap-12 border border-white/5 p-8 md:p-12">
+                    <div className="space-y-6">
+                        {[
+                            { title: "Diagnostic", desc: "Stakeholder interviews, market mapping, and hypothesis generation." },
+                            { title: "Analysis", desc: "Financial modelling, benchmarking, and rigorous data analysis." },
+                            { title: "Solution Design", desc: "Framework development and strategic recommendation options." },
+                            { title: "Executive Delivery", desc: "Board presentation and implementation roadmap." },
+                        ].map((phase, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className="flex gap-4"
+                            >
+                                <span className="text-gray-700 font-mono text-sm mt-0.5">{String(i + 1).padStart(2, '0')}</span>
+                                <div>
+                                    <h4 className="text-white font-semibold mb-1">{phase.title}</h4>
+                                    <p className="text-gray-500 text-sm leading-relaxed">{phase.desc}</p>
+                                </div>
+                            </motion.div>
+                        ))}
                     </div>
-                    <div className="bg-[#0B0F19] p-8 border border-white/5 flex flex-col justify-center items-center text-center">
-                        <h4 className="text-white font-bold mb-4">Ready to Launch a Project?</h4>
-                        <p className="text-gray-400 text-sm mb-8">
-                            We accept client applications for the upcoming semester cycle.
+                    <div className="flex flex-col justify-center border-l border-white/5 pl-12">
+                        <p className="text-gray-500 text-sm leading-relaxed mb-8">
+                            We accept client applications on a semester basis. Each engagement
+                            operates under structured advisory supervision with clear performance milestones.
                         </p>
-                        <a href="/hire-us" className="inline-flex items-center gap-2 bg-[#73B744] text-white px-6 py-3 rounded-sm font-bold hover:bg-[#63a03a] transition-all">
-                            Apply as a Client <ArrowRight className="w-4 h-4" />
+                        <a href="/hire-us" className="inline-flex items-center gap-2 text-white font-semibold text-sm hover:text-gray-300 transition-colors">
+                            Submit a Project Brief <ArrowRight className="w-4 h-4" />
                         </a>
                     </div>
                 </div>

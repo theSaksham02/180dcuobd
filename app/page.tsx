@@ -1,56 +1,63 @@
-"use client";
-
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Mission from "@/components/Mission";
 import Impact from "@/components/Impact";
 import WhatWeDo from "@/components/WhatWeDo";
 import ConsultingModel from "@/components/ConsultingModel";
-import SelectionCriteria from "@/components/SelectionCriteria"; // NEW
-import Governance from "@/components/Governance"; // NEW
-import Roadmap from "@/components/Roadmap"; // NEW
+import Governance from "@/components/Governance";
 import Testimonials from "@/components/Testimonials";
-import Footer from "@/components/Footer";
-
-// CTA Component (ReadyToPartner) added inline or imported if complex
+import Trajectory from "@/components/Trajectory";
 import { ArrowRight } from "lucide-react";
-
-function CTA() {
-  return (
-    <section className="py-32 bg-[#73B744] text-[#0B0F19]">
-      <div className="container mx-auto px-6 text-center max-w-4xl">
-        <h2 className="text-4xl md:text-5xl font-display font-bold mb-8">Ready to Scale Your Impact?</h2>
-        <p className="text-xl font-medium mb-10 max-w-2xl mx-auto opacity-90">
-          Partner with the world's most capable student consultants. Applications for the next cycle are now open.
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="/hire-us" className="bg-[#0B0F19] text-white px-8 py-4 rounded-sm font-bold hover:bg-gray-900 transition-all flex items-center justify-center gap-2">
-            Partner With Us <ArrowRight className="w-5 h-5" />
-          </a>
-          <a href="/join" className="bg-white text-[#0B0F19] px-8 py-4 rounded-sm font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-2">
-            Consultant Applications
-          </a>
-        </div>
-      </div>
-    </section>
-  )
-}
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-[#0B0F19]">
-      <Navbar />
-      <Hero />
-      <Mission />
-      <Impact />
-      <WhatWeDo />
-      <ConsultingModel />
-      <SelectionCriteria /> {/* Rigor */}
-      <Governance /> {/* Oversight */}
-      <Roadmap /> {/* Vision */}
-      <Testimonials />
-      <CTA />
-      <Footer />
-    </main>
-  );
+    return (
+        <main>
+            {/* 0–15% | Authority */}
+            <Hero />
+
+            {/* 15–30% | Global Scale */}
+            <Impact />
+
+            {/* 30–50% | Capabilities */}
+            <WhatWeDo />
+
+            {/* 50–65% | Process */}
+            <ConsultingModel />
+
+            {/* 65–75% | Institutional Structure */}
+            <Governance />
+
+            {/* 75–85% | Human Trust */}
+            <Testimonials />
+
+            {/* 85–95% | Trajectory */}
+            <Trajectory />
+
+            {/* 95–100% | Conversion */}
+            <section className="py-32 bg-[#080B14] border-t border-white/5">
+                <div className="container mx-auto px-6 lg:px-12 max-w-3xl text-center">
+                    <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
+                        Ready to work with us?
+                    </h2>
+                    <p className="text-gray-500 leading-relaxed mb-10">
+                        We partner with mission-driven organisations to deliver measurable strategic impact.
+                        Each engagement concludes with an actionable implementation roadmap.
+                    </p>
+                    <div className="flex flex-col sm:flex-row justify-center gap-4">
+                        <Link
+                            href="/hire-us"
+                            className="px-8 py-4 bg-white text-[#0B0F19] font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center gap-2"
+                        >
+                            Submit a Project Brief <ArrowRight className="w-4 h-4" />
+                        </Link>
+                        <Link
+                            href="/join"
+                            className="px-8 py-4 border border-white/15 text-white font-semibold hover:border-white/40 transition-colors inline-flex items-center justify-center"
+                        >
+                            Join as Consultant
+                        </Link>
+                    </div>
+                </div>
+            </section>
+        </main>
+    );
 }

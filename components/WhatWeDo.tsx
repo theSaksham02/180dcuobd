@@ -1,79 +1,74 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 
-const services = [
+const capabilities = [
     {
         title: "Market Entry & Expansion",
-        desc: "Comprehensive ecosystem mapping and regulatory framework analysis for non-profits entering the MENA region.",
+        desc: "Ecosystem mapping and regulatory framework analysis for organisations entering the MENA region.",
     },
     {
         title: "Financial Sustainability",
-        desc: "Long-term revenue diversification strategies, cost structure optimization, and funding model development.",
+        desc: "Revenue diversification, cost structure optimisation, and long-term funding model development.",
     },
     {
         title: "Operational Efficiency",
-        desc: "Process re-engineering, volunteer management systems, and resource allocation audits to maximize impact.",
+        desc: "Process re-engineering, resource allocation audits, and volunteer management systems.",
     },
     {
-        title: "Impact Measurement (SROI)",
-        desc: "Rigorous quantification of social value creation using global standard frameworks and custom dashboards.",
+        title: "Impact Measurement",
+        desc: "Quantification of social value using global standard frameworks and custom reporting dashboards.",
     },
     {
         title: "Digital Transformation",
         desc: "Data systems architecture, CRM implementation, and technology roadmaps for scalable growth.",
     },
     {
-        title: "Organizational Strategy",
-        desc: "Governance structure design, talent capability building, and change management for sustainable teams.",
+        title: "Organisational Strategy",
+        desc: "Governance design, talent capability building, and change management for sustainable teams.",
     },
 ];
 
 export default function WhatWeDo() {
     return (
-        <section className="py-32 bg-[#0B0F19] relative border-t border-white/5">
-            <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
-                <div className="grid lg:grid-cols-12 gap-16">
+        <section className="py-28 bg-[#0B0F19] border-t border-white/5">
+            <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
 
-                    {/* Header */}
-                    <div className="lg:col-span-4">
-                        <h2 className="text-sm font-bold text-[#73B744] uppercase tracking-widest mb-6">Our Capabilities</h2>
-                        <h3 className="text-4xl md:text-5xl font-display font-medium text-white mb-8 leading-tight">
-                            Strategic Advisory <br /> for the Social Sector.
-                        </h3>
-                        <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                            We move beyond standard consulting packages to deliver tailored, evidence-based solutions for complex challenges.
-                        </p>
-                        <a href="/our-work" className="inline-flex items-center gap-2 text-white font-bold hover:text-[#73B744] transition-colors border-b border-white/20 pb-1 hover:border-[#73B744]">
-                            View Case Studies <ArrowRight className="w-4 h-4" />
-                        </a>
-                    </div>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="mb-16"
+                >
+                    <p className="text-[11px] text-gray-600 uppercase tracking-[0.2em] font-medium mb-6">
+                        Advisory Capabilities
+                    </p>
+                    <h2 className="text-3xl md:text-4xl font-semibold text-white leading-tight max-w-xl">
+                        Structured advisory for complex challenges.
+                    </h2>
+                </motion.div>
 
-                    {/* List / Grid Refactor - Analytical Interaction */}
-                    <div className="lg:col-span-8 flex flex-col gap-6">
-                        {services.map((s, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className="group border border-white/5 bg-[#111827] p-8 rounded-sm hover:-translate-y-1 hover:shadow-xl hover:border-[#73B744]/30 transition-all duration-300"
-                            >
-                                <div className="flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12">
-                                    <h4 className="text-2xl font-display font-medium text-white min-w-[280px] group-hover:text-[#73B744] transition-colors">
-                                        {s.title}
-                                    </h4>
-                                    <p className="text-gray-400 font-light text-base leading-relaxed max-w-lg group-hover:text-gray-200 transition-colors">
-                                        {s.desc}
-                                    </p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-
+                <div className="space-y-0">
+                    {capabilities.map((s, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.06, duration: 0.5 }}
+                            className="group grid md:grid-cols-12 gap-4 md:gap-8 py-8 border-b border-white/5 last:border-0 hover:bg-white/[0.01] transition-colors -mx-4 px-4"
+                        >
+                            <h3 className="md:col-span-4 text-white font-semibold text-lg group-hover:text-gray-200 transition-colors">
+                                {s.title}
+                            </h3>
+                            <p className="md:col-span-8 text-gray-500 text-base leading-relaxed group-hover:text-gray-400 transition-colors">
+                                {s.desc}
+                            </p>
+                        </motion.div>
+                    ))}
                 </div>
+
             </div>
         </section>
     );
