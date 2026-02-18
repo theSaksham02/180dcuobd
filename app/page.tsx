@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Impact from "@/components/Impact";
 import Marquee from "@/components/Marquee";
@@ -8,10 +9,12 @@ import Clients from "@/components/Clients";
 import Partners from "@/components/Partners";
 import News from "@/components/News";
 import CTAGrid from "@/components/CTAGrid";
+import Footer from "@/components/Footer";
 
 export default function Home() {
     return (
         <main>
+            <Navbar />
             <Hero />
             <Impact />
             <Marquee />
@@ -22,6 +25,7 @@ export default function Home() {
             <Partners />
             <News />
             <CTAGrid />
+            <Footer />
         </main>
     );
 }

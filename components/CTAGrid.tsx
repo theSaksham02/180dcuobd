@@ -33,20 +33,23 @@ const ctaBlocks = [
 
 export default function CTAGrid() {
     return (
-        <section className="py-14 sm:py-20 md:py-24 bg-gray-50 border-t border-gray-100">
+        <section className="py-16 sm:py-20 md:py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 max-w-[1280px]">
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {/* Top divider */}
+                <div className="border-t border-gray-200 mb-12 sm:mb-16" />
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
                     {ctaBlocks.map((block, i) => (
                         <div key={i} className="space-y-4">
-                            <h3 className="text-xl font-bold text-[#1a1a1a]">
+                            <h3 className="text-lg font-bold text-[#1a1a1a] leading-snug">
                                 {block.title}
                             </h3>
-                            <p className="text-gray-600 text-sm leading-relaxed">
+                            <p className="text-gray-500 text-sm leading-relaxed">
                                 {block.description}
                             </p>
                             <Link
                                 href={block.link}
-                                className="inline-block text-[#73B744] font-semibold underline underline-offset-4 hover:text-[#5a9636] transition-colors text-sm"
+                                className="inline-block text-[#73B744] font-semibold underline underline-offset-4 decoration-[#73B744]/60 hover:decoration-[#73B744] hover:text-[#5a9636] transition-colors text-sm"
                             >
                                 {block.linkText}
                             </Link>
