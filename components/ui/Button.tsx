@@ -10,16 +10,16 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, variant = "primary", isLoading, children, ...props }, ref) => {
         const variants = {
-            primary: "bg-[#73B744] text-white hover:bg-[#63a03a] shadow-md shadow-green-500/20 active:shadow-sm",
-            secondary: "bg-[#B50D11] text-white hover:bg-[#940b0e] shadow-md shadow-red-500/20",
-            outline: "bg-transparent border border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300",
-            ghost: "bg-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-100/50",
+            primary: "bg-white text-[#0B0F19] hover:bg-gray-100",
+            secondary: "bg-[#0B0F19] text-white border border-white/15 hover:border-white/30",
+            outline: "bg-transparent border border-white/10 text-gray-300 hover:bg-white/5 hover:border-white/20",
+            ghost: "bg-transparent text-gray-400 hover:text-white hover:bg-white/5",
         };
 
         return (
             <button
                 className={cn(
-                    "inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-bold transition-all disabled:opacity-50 disabled:pointer-events-none active:scale-95 tracking-wide",
+                    "inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold transition-all disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98] tracking-wide",
                     variants[variant],
                     className
                 )}

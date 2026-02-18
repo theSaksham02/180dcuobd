@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Impact from "@/components/Impact";
+import About from "@/components/About";
 import WhatWeDo from "@/components/WhatWeDo";
 import ConsultingModel from "@/components/ConsultingModel";
 import Governance from "@/components/Governance";
@@ -11,28 +12,37 @@ import Link from "next/link";
 export default function Home() {
     return (
         <main>
-            {/* 0–15% | Authority */}
+            {/* Authority */}
             <Hero />
 
-            {/* 15–30% | Global Scale */}
-            <Impact />
+            {/* Global Scale */}
+            <div id="impact">
+                <Impact />
+            </div>
 
-            {/* 30–50% | Capabilities */}
-            <WhatWeDo />
+            {/* Why 180DC UoBD */}
+            <About />
 
-            {/* 50–65% | Process */}
-            <ConsultingModel />
+            {/* Advisory Capabilities */}
+            <div id="capabilities">
+                <WhatWeDo />
+            </div>
 
-            {/* 65–75% | Institutional Structure */}
+            {/* Engagement Process */}
+            <div id="model">
+                <ConsultingModel />
+            </div>
+
+            {/* Institutional Structure */}
             <Governance />
 
-            {/* 75–85% | Human Trust */}
+            {/* Human Trust */}
             <Testimonials />
 
-            {/* 85–95% | Trajectory */}
+            {/* Trajectory */}
             <Trajectory />
 
-            {/* 95–100% | Conversion */}
+            {/* Conversion */}
             <section className="py-32 bg-[#080B14] border-t border-white/5">
                 <div className="container mx-auto px-6 lg:px-12 max-w-3xl text-center">
                     <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">

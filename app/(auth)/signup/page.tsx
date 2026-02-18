@@ -3,40 +3,49 @@
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function SignupPage() {
     return (
-        <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-[#050505]">
-            <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-green-500/10 rounded-full blur-[100px] animate-blob" />
+        <div className="min-h-screen flex items-center justify-center p-6 bg-[#0B0F19]">
+            <div className="w-full max-w-md">
 
-            <div className="w-full max-w-md bg-[#111]/80 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-3xl shadow-2xl relative z-10">
-                <div className="mb-8">
-                    <h1 className="text-3xl font-bold text-white">Create Account</h1>
-                    <p className="text-gray-400 mt-2">Join the University of Birmingham Dubai branch.</p>
-                </div>
+                {/* Logo */}
+                <Link href="/" className="block mb-12">
+                    <div className="relative h-10 w-40">
+                        <Image src="/trans-logo.png" alt="180DC UoBD" fill className="object-contain object-left" />
+                    </div>
+                </Link>
+
+                <h1 className="text-3xl font-semibold text-white mb-2">Create Account</h1>
+                <p className="text-gray-500 text-sm mb-10">Apply to join the consulting team.</p>
 
                 <form className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                         <Input label="First Name" placeholder="Jane" />
                         <Input label="Last Name" placeholder="Doe" />
                     </div>
-                    <Input label="Student Email" type="email" placeholder="j.doe@student.bham.ac.uk" />
+                    <Input label="University Email" type="email" placeholder="j.doe@student.bham.ac.uk" />
                     <Input label="Student ID" placeholder="1234567" />
                     <Input label="Password" type="password" placeholder="••••••••" />
 
-                    <div className="text-xs text-gray-500 leading-relaxed">
-                        By creating an account, you agree to our <Link href="/terms" className="text-[#73B744] underline">Terms</Link> and <Link href="/privacy" className="text-[#73B744] underline">Privacy Policy</Link>.
-                    </div>
+                    <p className="text-[11px] text-gray-600 leading-relaxed pt-1">
+                        By creating an account, you agree to our{" "}
+                        <Link href="/terms" className="text-gray-400 underline hover:text-white">Terms</Link> and{" "}
+                        <Link href="/privacy" className="text-gray-400 underline hover:text-white">Privacy Policy</Link>.
+                    </p>
 
-                    <Button className="w-full h-12 text-lg mt-2 font-bold">
-                        Create Account <ArrowRight className="w-4 h-4 ml-2" />
+                    <Button className="w-full h-12 text-base mt-2">
+                        Create Account
                     </Button>
                 </form>
 
-                <div className="mt-6 text-center text-sm text-gray-400">
-                    Already a member? <Link href="/login" className="font-bold text-[#73B744] hover:text-[#a3e635]">Log In</Link>
-                </div>
+                <p className="mt-10 text-sm text-gray-600">
+                    Already have an account?{" "}
+                    <Link href="/login" className="text-white hover:text-gray-300 transition-colors font-semibold">
+                        Sign in
+                    </Link>
+                </p>
             </div>
         </div>
     );
