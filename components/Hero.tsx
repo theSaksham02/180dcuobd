@@ -13,7 +13,7 @@ export default function Hero() {
         <section className="relative min-h-screen flex flex-col justify-center pt-20 overflow-hidden bg-[#0B0F19]">
 
             {/* Subtle Background */}
-            <div className="absolute inset-0 z-0 opacity-30 pointer-events-none mix-blend-screen">
+            <div className="absolute inset-0 z-0 opacity-10 pointer-events-none mix-blend-screen">
                 <GlobeHero />
             </div>
 
