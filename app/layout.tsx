@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-[#0B0F19] text-[#F5F7FA] overflow-x-hidden`}
+        className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-white text-[#1a1a1a] overflow-x-hidden`}
       >
         {children}
       </body>

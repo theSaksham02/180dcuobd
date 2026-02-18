@@ -1,75 +1,107 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
     {
-        quote: "180DC provided a level of strategic clarity we typically expect from established advisory firms. Their market analysis was instrumental in our regional expansion.",
-        author: "Sarah Al-Amiri",
-        role: "CEO, GreenFuture Foundation",
+        quote: "The 180DC team are professionals at their jobs. At first, I thought that young university students would not be able to deliver such solutions. Their report reminds me of the work of 'The Big 3' consulting firms!",
+        client: "UNICEF",
     },
     {
-        quote: "The analytical rigour and professionalism exceeded our expectations. They delivered an actionable implementation roadmap — not just a slide deck.",
-        author: "James Sterling",
-        role: "Director, Social Impact Fund",
+        quote: "The team was amazing, they went the extra mile to do additional analysis which we will apply to other regions outside the initial scope. They were highly motivated and professional and I'm keen to work with them again on the next phase of work.",
+        client: "Make a Wish International",
     },
     {
-        quote: "What sets 180DC apart is their structured engagement model. Every phase had clear deliverables and measurable outcomes.",
-        author: "Dr. Amira Hassan",
-        role: "Programme Director, Dubai Cares",
+        quote: "Thank you 180DC, for all that you have done, and are doing, to support SolarBuddy's mission. Our experience working with you has been phenomenal! To all the numerous amazing students I've personally worked with, you are leading the way! Keep going!",
+        client: "SolarBuddy",
+    },
+    {
+        quote: "I was so impressed with the detail, the approach, the regular communication, and most of all, that the team really listened. I am your biggest fan. Your support has been terrific through what was quite a challenging time for mySircles.",
+        client: "mySircles",
+    },
+    {
+        quote: "The 180DC project managers bring real professionalism to their communication, which made working with them really easy. The thing we love the most is that they are curious and engaged, they ask great questions which prompted us to think differently.",
+        client: "Community Partner",
     },
 ];
 
 export default function Testimonials() {
-    const [current, setCurrent] = useState(0);
+    const [startIndex, setStartIndex] = useState(0);
+    const visibleCount = 3;
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrent((prev) => (prev + 1) % testimonials.length);
-        }, 8000);
-        return () => clearInterval(timer);
-    }, []);
+    const next = () => {
+        setStartIndex((prev) =>
+            prev + 1 >= testimonials.length ? 0 : prev + 1
+        );
+    };
+
+    const prev = () => {
+        setStartIndex((prev) =>
+            prev - 1 < 0 ? testimonials.length - 1 : prev - 1
+        );
+    };
+
+    const getVisible = () => {
+        const result = [];
+        for (let i = 0; i < visibleCount; i++) {
+            result.push(testimonials[(startIndex + i) % testimonials.length]);
+        }
+        return result;
+    };
 
     return (
-        <section className="py-28 bg-[#0B0F19] border-t border-white/5">
-            <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
-
-                <p className="text-[11px] text-gray-600 uppercase tracking-[0.2em] font-medium mb-16">
-                    Partner Perspectives
-                </p>
-
-                <div className="relative min-h-[240px]">
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={current}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.6 }}
+        <section className="py-24 md:py-32 bg-white">
+            <div className="container mx-auto px-6 max-w-[1280px]">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a]">
+                        What our clients say
+                    </h2>
+                    <div className="flex gap-2">
+                        <button
+                            onClick={prev}
+                            className="p-2 border border-gray-300 hover:border-[#73B744] rounded-full transition-colors"
+                            aria-label="Previous"
                         >
-                            <blockquote className="text-2xl md:text-3xl font-serif text-white leading-relaxed italic mb-10">
-                                "{testimonials[current].quote}"
-                            </blockquote>
-                            <div>
-                                <p className="text-white font-semibold">{testimonials[current].author}</p>
-                                <p className="text-gray-600 text-sm mt-1">{testimonials[current].role}</p>
-                            </div>
-                        </motion.div>
-                    </AnimatePresence>
+                            <ChevronLeft className="w-5 h-5 text-gray-600" />
+                        </button>
+                        <button
+                            onClick={next}
+                            className="p-2 border border-gray-300 hover:border-[#73B744] rounded-full transition-colors"
+                            aria-label="Next"
+                        >
+                            <ChevronRight className="w-5 h-5 text-gray-600" />
+                        </button>
+                    </div>
                 </div>
 
-                {/* Indicators */}
-                <div className="flex gap-3 mt-12">
-                    {testimonials.map((_, i) => (
-                        <button
+                {/* Cards */}
+                <div className="grid md:grid-cols-3 gap-6">
+                    {getVisible().map((t, i) => (
+                        <div
                             key={i}
-                            onClick={() => setCurrent(i)}
-                            className={`h-px transition-all duration-500 ${i === current ? 'w-8 bg-white/60' : 'w-4 bg-white/10'}`}
-                        />
+                            className="bg-gradient-to-br from-[#73B744] to-[#5a9636] rounded-xl p-8 text-white flex flex-col justify-between min-h-[320px]"
+                        >
+                            {/* Quote Mark */}
+                            <div>
+                                <svg
+                                    className="w-10 h-10 text-white/40 mb-4"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983z" />
+                                </svg>
+                                <p className="text-white/90 text-base leading-relaxed">
+                                    {t.quote}
+                                </p>
+                            </div>
+                            <p className="text-white font-semibold mt-6 text-sm uppercase tracking-wide">
+                                {t.client}
+                            </p>
+                        </div>
                     ))}
                 </div>
-
             </div>
         </section>
     );

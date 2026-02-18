@@ -46,16 +46,16 @@ const leadership = [
 
 export default function TeamPage() {
     return (
-        <main className="min-h-screen bg-[#0B0F19]">
+        <main className="min-h-screen bg-white">
             <Navbar />
 
             {/* Header */}
-            <section className="pt-36 pb-20 px-6">
-                <div className="container mx-auto max-w-6xl">
-                    <p className="text-[11px] text-gray-600 uppercase tracking-[0.2em] font-medium mb-6">
+            <section className="pt-36 pb-16 px-6">
+                <div className="container mx-auto max-w-[1280px]">
+                    <p className="text-xs text-[#73B744] uppercase tracking-[0.2em] font-semibold mb-4">
                         Leadership
                     </p>
-                    <h1 className="text-4xl md:text-5xl font-semibold text-white max-w-xl">
+                    <h1 className="text-4xl md:text-5xl font-bold text-[#1a1a1a] max-w-xl">
                         The people behind the platform.
                     </h1>
                 </div>
@@ -63,8 +63,8 @@ export default function TeamPage() {
 
             {/* Team Grid */}
             <section className="pb-28 px-6">
-                <div className="container mx-auto max-w-6xl">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
+                <div className="container mx-auto max-w-[1280px]">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {leadership.map((member, i) => (
                             <motion.div
                                 key={i}
@@ -72,26 +72,28 @@ export default function TeamPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.06, duration: 0.5 }}
-                                className="group bg-[#0B0F19] p-8 hover:bg-[#0E1220] transition-colors"
+                                className="group bg-white border border-gray-100 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
                             >
                                 {/* Portrait placeholder */}
-                                <div className="h-56 bg-[#111827] mb-6 relative overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
-                                    <div className="absolute inset-0 flex items-center justify-center text-gray-700 text-4xl font-semibold">
+                                <div className="h-56 bg-gray-100 relative overflow-hidden">
+                                    <div className="absolute inset-0 flex items-center justify-center text-gray-300 text-4xl font-bold">
                                         {member.name.split(' ').map(n => n[0]).join('')}
                                     </div>
                                 </div>
 
-                                <h3 className="text-white font-semibold text-lg mb-1">{member.name}</h3>
-                                <p className="text-gray-600 text-sm uppercase tracking-widest mb-4">{member.role}</p>
-                                <p className="text-gray-500 text-sm leading-relaxed mb-6">{member.bio}</p>
+                                <div className="p-6">
+                                    <h3 className="text-[#1a1a1a] font-semibold text-lg mb-1">{member.name}</h3>
+                                    <p className="text-[#73B744] text-sm font-medium mb-3">{member.role}</p>
+                                    <p className="text-gray-500 text-sm leading-relaxed mb-5">{member.bio}</p>
 
-                                <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <a href="#" className="text-gray-600 hover:text-white transition-colors">
-                                        <Linkedin className="w-4 h-4" />
-                                    </a>
-                                    <a href="#" className="text-gray-600 hover:text-white transition-colors">
-                                        <Mail className="w-4 h-4" />
-                                    </a>
+                                    <div className="flex gap-3">
+                                        <a href="#" className="text-gray-400 hover:text-[#73B744] transition-colors">
+                                            <Linkedin className="w-4 h-4" />
+                                        </a>
+                                        <a href="#" className="text-gray-400 hover:text-[#73B744] transition-colors">
+                                            <Mail className="w-4 h-4" />
+                                        </a>
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}

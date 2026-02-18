@@ -4,18 +4,18 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --color-brand-dark-bg: #0B0F19;
-  --color-brand-card: #111827;
-  --color-brand-text-primary: #F5F7FA;
-  --color-brand-text-secondary: #9CA3AF;
+  --color-brand-green: #73B744;
+  --color-brand-green-dark: #5a9636;
+  --color-brand-dark: #1a1a1a;
+  --color-brand-gray: #4a4a4a;
 
   --font-sans: var(--font-inter);
   --font-display: var(--font-playfair);
 }
 
 :root {
-  --background: #0B0F19;
-  --foreground: #F5F7FA;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
   --font-inter: 'Inter', sans-serif;
   --font-playfair: 'Playfair Display', serif;
 }
@@ -29,34 +29,48 @@ body {
   line-height: 1.6;
 }
 
-/* Minimal Utilities */
+/* Utilities */
 @utility container-wide {
-  max-width: 1400px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 
-@utility glass-matte {
-  background: rgba(17, 24, 39, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
 @utility text-balance {
   text-wrap: balance;
 }
 
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B0F19;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1F2937;
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
 }

@@ -1,82 +1,60 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import dynamic from "next/dynamic";
-
-const GlobeHero = dynamic(() => import("@/components/3d/GlobeHero"), { ssr: false });
+import Image from "next/image";
 
 export default function Hero() {
-    const { scrollY } = useScroll();
-    const backgroundY = useTransform(scrollY, [0, 600], [0, 120]);
-
     return (
-        <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0B0F19]">
-            {/* Globe — barely visible, always present */}
-            <motion.div
-                style={{ y: backgroundY }}
-                className="absolute inset-0 z-0 opacity-[0.07] pointer-events-none"
-            >
-                <GlobeHero />
-            </motion.div>
+        <section className="relative min-h-screen flex items-center bg-white overflow-hidden">
+            {/* Content */}
+            <div className="container mx-auto px-6 lg:px-16 max-w-[1280px] relative z-10">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    {/* Left — Headline */}
+                    <div>
+                        <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-bold text-[#1a1a1a] leading-[1.15] tracking-tight">
+                            The world&apos;s{" "}
+                            <span className="text-[#73B744] italic">largest</span>{" "}
+                            university-based consultancy for non-profits and socially-conscious organisations
+                        </h1>
+                    </div>
 
-            <div className="container mx-auto px-6 lg:px-12 relative z-10 max-w-6xl">
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                >
-                    <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-semibold text-white leading-[1.08] tracking-tight max-w-4xl">
-                        Strategy Consulting<br />
-                        for Social Impact
-                    </h1>
-                </motion.div>
-
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-                    className="text-xl text-gray-400 max-w-xl leading-relaxed mt-8"
-                >
-                    We deliver professional-grade advisory services to mission-driven
-                    organisations across the UAE and wider GCC.
-                </motion.p>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
-                    className="flex items-center gap-6 mt-12"
-                >
-                    <Link
-                        href="/hire-us"
-                        className="px-8 py-4 bg-white text-[#0B0F19] font-semibold text-base hover:bg-gray-100 transition-colors flex items-center gap-2"
-                    >
-                        Partner With Us <ArrowRight className="w-4 h-4" />
-                    </Link>
-                    <Link
-                        href="/join"
-                        className="px-8 py-4 border border-white/15 text-white font-semibold text-base hover:border-white/40 transition-colors"
-                    >
-                        Apply as Consultant
-                    </Link>
-                </motion.div>
+                    {/* Right — Circular Photos */}
+                    <div className="relative hidden lg:flex justify-center items-center h-[500px]">
+                        {/* Large circle */}
+                        <div className="absolute top-0 right-0 w-[340px] h-[340px] rounded-full overflow-hidden border-4 border-white shadow-xl z-10">
+                            <Image
+                                src="/team-hands.jpg"
+                                alt="Team collaboration"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                        {/* Small circle */}
+                        <div className="absolute bottom-0 right-20 w-[220px] h-[220px] rounded-full overflow-hidden border-4 border-white shadow-xl z-20">
+                            <Image
+                                src="/team-meeting.jpg"
+                                alt="Team meeting"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            {/* Institutional anchor — bottom of hero */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6, duration: 1 }}
-                className="absolute bottom-12 left-0 right-0 z-10"
-            >
-                <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
-                    <p className="text-[11px] text-gray-600 uppercase tracking-[0.2em] font-medium">
-                        University of Birmingham Dubai &nbsp;·&nbsp; 180 Degrees Consulting Global Network
-                    </p>
-                </div>
-            </motion.div>
+            {/* Green Wave Divider */}
+            <div className="absolute bottom-0 left-0 right-0 z-0">
+                <svg viewBox="0 0 1440 320" preserveAspectRatio="none" className="w-full h-[200px] md:h-[280px]">
+                    <path
+                        fill="#73B744"
+                        d="M0,160 C360,280 720,60 1080,180 C1260,240 1380,200 1440,160 L1440,320 L0,320 Z"
+                    />
+                    <path
+                        fill="#5a9636"
+                        d="M0,220 C360,300 720,140 1080,240 C1260,280 1380,260 1440,220 L1440,320 L0,320 Z"
+                        opacity="0.7"
+                    />
+                </svg>
+            </div>
         </section>
     );
 }
