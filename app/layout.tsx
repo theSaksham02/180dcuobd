@@ -1,22 +1,13 @@
 import type { Metadata } from "next";
-import { Outfit, Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "180 Degrees Consulting | University Branch",
-  description: "The world's largest university-based branch consulting strategy.",
+  title: "180 Degrees Consulting | University of Birmingham Dubai",
+  description: "The world's largest university-based branch consulting strategy. Building the next generation of social impact leaders.",
 };
 
 export default function RootLayout({
@@ -25,9 +16,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${outfit.variable} ${inter.variable} font-sans antialiased bg-[#050505] text-white overflow-x-hidden`}
+        className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-[#0B0F19] text-[#F5F7FA] overflow-x-hidden`}
       >
         {children}
       </body>
