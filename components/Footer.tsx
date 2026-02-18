@@ -49,7 +49,8 @@ export default function Footer() {
                     <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Resources</h4>
                     <ul className="space-y-4 text-sm">
                         <li><Link href="/insights" className="hover:text-white transition-colors">Insights</Link></li>
-                        <li><Link href="/join" className="hover:text-white transition-colors">Student Application</Link></li>
+                        <li><span className="text-gray-600 cursor-not-allowed">Impact Report 2025 (Coming Soon)</span></li>
+                        <li><Link href="/join" className="hover:text-white transition-colors">Analyst Application</Link></li>
                         <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
                         <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
                     </ul>

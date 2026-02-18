@@ -56,7 +56,7 @@ export default function Hero() {
                         transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
                         className="text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed font-light mb-10"
                     >
-                        Delivering professional-grade advisory services to mission-driven organisations while developing the next generation of strategic leaders.
+                        Delivering professional-grade advisory services to mission-driven organisations while developing the region's future strategic leaders.
                     </motion.p>
 
                     {/* CTAs - Delayed Reveal */}
@@ -70,13 +70,13 @@ export default function Hero() {
                             href="/hire-us"
                             className="px-8 py-4 bg-[#F5F7FA] text-[#0B0F19] rounded-sm font-bold text-lg hover:bg-white transition-all flex items-center gap-2 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]"
                         >
-                            Work With Us <ArrowRight className="w-5 h-5" />
+                            Partner With Us <ArrowRight className="w-5 h-5" />
                         </Link>
                         <Link
                             href="/join"
                             className="px-8 py-4 bg-transparent border border-white/20 text-white rounded-sm font-bold text-lg hover:bg-white/5 hover:border-white/40 transition-all"
                         >
-                            Join the Team
+                            Apply for Analyst Role
                         </Link>
                     </motion.div>
 

@@ -14,11 +14,11 @@ export default function JoinPage() {
             <section className="pt-32 pb-20 px-6 bg-[#080B14] border-b border-white/5">
                 <div className="container mx-auto max-w-5xl text-center">
                     <h1 className="text-5xl md:text-6xl font-bold font-display text-white mb-6">
-                        Join the Top Tier of <br /> <span className="text-[#73B744]">Student Consultants</span>
+                        Join the Top Tier of <br /> <span className="text-[#73B744]">Future Strategy Leaders</span>
                     </h1>
                     <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-10">
-                        180 Degrees Consulting is the world's most prestigious university-based consulting branch.
-                        We select high-potential students and train them to deliver executive-level strategy.
+                        180 Degrees Consulting is the world's most prestigious university-based strategy unit.
+                        We select high-potential analysts and train them to deliver executive-level strategy.
                     </p>
                     <a href="#apply" className="inline-flex items-center gap-2 bg-[#F5F7FA] text-[#0B0F19] px-8 py-4 rounded-sm font-bold hover:bg-white transition-all">
                         Start Application <ArrowRight className="w-5 h-5" />

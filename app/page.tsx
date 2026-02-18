@@ -2,16 +2,17 @@
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Mission from "@/components/Mission"; // Narrative
-import Impact from "@/components/Impact"; // Proof
-import WhatWeDo from "@/components/WhatWeDo"; // Services
-import ConsultingModel from "@/components/ConsultingModel"; // Methodology
-import Testimonials from "@/components/Testimonials"; // Social Proof
+import Mission from "@/components/Mission";
+import Impact from "@/components/Impact";
+import WhatWeDo from "@/components/WhatWeDo";
+import ConsultingModel from "@/components/ConsultingModel";
+import SelectionCriteria from "@/components/SelectionCriteria"; // NEW
+import Governance from "@/components/Governance"; // NEW
+import Roadmap from "@/components/Roadmap"; // NEW
+import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
 // CTA Component (ReadyToPartner) added inline or imported if complex
-// Reusing logic from Hire Us for a quick CTA section at the bottom
-
 import { ArrowRight } from "lucide-react";
 
 function CTA() {
@@ -27,7 +28,7 @@ function CTA() {
             Partner With Us <ArrowRight className="w-5 h-5" />
           </a>
           <a href="/join" className="bg-white text-[#0B0F19] px-8 py-4 rounded-sm font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-2">
-            Student Applications
+            Consultant Applications
           </a>
         </div>
       </div>
@@ -44,6 +45,9 @@ export default function Home() {
       <Impact />
       <WhatWeDo />
       <ConsultingModel />
+      <SelectionCriteria /> {/* Rigor */}
+      <Governance /> {/* Oversight */}
+      <Roadmap /> {/* Vision */}
       <Testimonials />
       <CTA />
       <Footer />
