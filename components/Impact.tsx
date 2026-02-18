@@ -28,10 +28,10 @@ export default function Impact() {
                     {metrics.map((m, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.1 }}
+                            initial={{ opacity: 0, y: 24 }} // TranslateY 24px -> 0
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }} // 30% Viewport Trigger
+                            transition={{ duration: 0.6, delay: i * 0.15, ease: "easeOut" }} // 150ms staggered delay
                             className="bg-[#111827] border border-white/5 p-8 rounded-sm text-center hover:border-[#73B744] transition-colors group"
                         >
                             <div className="text-4xl md:text-5xl font-display font-bold text-white mb-2 tabular-nums group-hover:text-[#73B744] transition-colors">

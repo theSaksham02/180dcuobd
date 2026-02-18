@@ -1,60 +1,77 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import * as THREE from "three";
-import { Points, PointMaterial } from "@react-three/drei";
+import { Sphere, Line, Html } from "@react-three/drei";
 
-function ParticleGlobe() {
-    const ref = useRef<THREE.Points>(null);
+function ConnectedGlobe() {
+    const groupRef = useRef<THREE.Group>(null);
+    const linesRef = useRef<THREE.LineSegments>(null);
 
-    // Generate random points on a sphere
-    const particleCount = 2000;
-    const positions = new Float32Array(particleCount * 3);
+    // generate random points on sphere surface
+    const count = 60;
+    const radius = 2.8;
 
-    for (let i = 0; i < particleCount; i++) {
-        const theta = Math.random() * Math.PI * 2;
-        const phi = Math.acos((Math.random() * 2) - 1);
-        const radius = 2.5; // Globe radius
+    const points = useMemo(() => {
+        const temp = [];
+        const spherical = new THREE.Spherical();
 
-        const x = radius * Math.sin(phi) * Math.cos(theta);
-        const y = radius * Math.sin(phi) * Math.sin(theta);
-        const z = radius * Math.cos(phi);
-
-        positions[i * 3] = x;
-        positions[i * 3 + 1] = y;
-        positions[i * 3 + 2] = z;
-    }
+        for (let i = 0; i < count; i++) {
+            spherical.set(radius, Math.acos(THREE.MathUtils.randFloatSpread(2)), THREE.MathUtils.randFloat(0, Math.PI * 2));
+            const vec = new THREE.Vector3().setFromSpherical(spherical);
+            temp.push(vec);
+        }
+        return temp;
+    }, []);
 
     useFrame((state, delta) => {
-        if (ref.current) {
-            ref.current.rotation.y += delta * 0.1;
-            ref.current.rotation.x += delta * 0.02;
+        if (groupRef.current) {
+            groupRef.current.rotation.y += delta * 0.05; // Slow rotation
         }
     });
 
     return (
-        <group rotation={[0, 0, Math.PI / 4]}>
-            <Points ref={ref} positions={positions} stride={3} frustumCulled={false}>
-                <PointMaterial
+        <group ref={groupRef}>
+            {/* Base Wireframe Sphere */}
+            <mesh>
+                <icosahedronGeometry args={[radius - 0.1, 2]} />
+                <meshBasicMaterial
+                    wireframe
+                    color="#1e3a8a" // Dark Blue
                     transparent
-                    color="#73B744"
-                    size={0.02}
-                    sizeAttenuation={true}
-                    depthWrite={false}
-                    opacity={0.6}
+                    opacity={0.1}
                 />
-            </Points>
+            </mesh>
+
+            {/* Nodes */}
+            {points.map((pos, i) => (
+                <mesh key={i} position={pos}>
+                    <sphereGeometry args={[0.02, 8, 8]} />
+                    <meshBasicMaterial color="#3b82f6" transparent opacity={0.4} />
+                </mesh>
+            ))}
+
+            {/* Connecting Lines (Simplified) */}
+            <Line
+                points={points} // Array of Vector3
+                color="#1d4ed8" // Blue-700
+                lineWidth={0.5}
+                dashed={false}
+                opacity={0.1}
+                transparent
+            />
         </group>
     );
 }
 
 export default function GlobeHero() {
     return (
-        <div className="absolute inset-0 z-0 opacity-40">
-            <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
+        <div className="absolute inset-0 z-0 opacity-100 h-full w-full pointer-events-none">
+            <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
                 <ambientLight intensity={0.5} />
-                <ParticleGlobe />
+                <ConnectedGlobe />
+                <fog attach="fog" args={['#0B0F19', 5, 15]} />
             </Canvas>
         </div>
     );

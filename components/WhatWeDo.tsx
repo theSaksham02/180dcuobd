@@ -50,8 +50,8 @@ export default function WhatWeDo() {
                         </a>
                     </div>
 
-                    {/* List / Grid Refactor - No Cards */}
-                    <div className="lg:col-span-8 flex flex-col gap-8">
+                    {/* List / Grid Refactor - Analytical Interaction */}
+                    <div className="lg:col-span-8 flex flex-col gap-6">
                         {services.map((s, i) => (
                             <motion.div
                                 key={i}
@@ -59,13 +59,13 @@ export default function WhatWeDo() {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="group border-b border-white/10 pb-8 last:border-0"
+                                className="group border border-white/5 bg-[#111827] p-8 rounded-sm hover:-translate-y-1 hover:shadow-xl hover:border-[#73B744]/30 transition-all duration-300"
                             >
                                 <div className="flex flex-col md:flex-row md:items-baseline gap-4 md:gap-12">
                                     <h4 className="text-2xl font-display font-medium text-white min-w-[280px] group-hover:text-[#73B744] transition-colors">
                                         {s.title}
                                     </h4>
-                                    <p className="text-gray-400 font-light text-base leading-relaxed max-w-lg group-hover:text-gray-300 transition-colors">
+                                    <p className="text-gray-400 font-light text-base leading-relaxed max-w-lg group-hover:text-gray-200 transition-colors">
                                         {s.desc}
                                     </p>
                                 </div>

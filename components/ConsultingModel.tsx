@@ -27,22 +27,28 @@ export default function ConsultingModel() {
                     </p>
                 </div>
 
-                {/* Visual Pipeline */}
+                {/* Visual Pipeline - Sequential Reveal */}
                 <div className="relative mb-24 hidden md:block">
-                    {/* Connecting Line */}
-                    <div className="absolute top-1/2 left-0 right-0 h-px bg-white/10 -translate-y-1/2 z-0" />
+                    {/* Connecting Line - Grows from left */}
+                    <motion.div
+                        initial={{ scaleX: 0 }}
+                        whileInView={{ scaleX: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.5, ease: "easeInOut" }}
+                        className="absolute top-1/2 left-0 right-0 h-px bg-white/10 -translate-y-1/2 z-0 origin-left"
+                    />
 
                     <div className="grid grid-cols-6 relative z-10">
                         {pipeline.map((step, i) => (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
+                                transition={{ delay: i * 0.2, duration: 0.5, ease: "easeOut" }} // Sequential Fade
                                 className="flex flex-col items-center text-center group"
                             >
-                                <div className="w-4 h-4 rounded-full bg-[#0B0F19] border-2 border-[#73B744] mb-6 relative z-20 group-hover:scale-125 transition-transform duration-300">
+                                <div className="w-4 h-4 rounded-full bg-[#0B0F19] border-2 border-[#73B744] mb-6 relative z-20 transition-transform duration-300 group-hover:scale-125">
                                     <div className="absolute inset-0 bg-[#73B744] rounded-full opacity-0 group-hover:animate-ping" />
                                 </div>
                                 <h4 className="text-white font-bold font-display text-lg mb-2">{step.title}</h4>
@@ -74,13 +80,20 @@ export default function ConsultingModel() {
                                 { title: "Phase 3: Solution Design", desc: "Framework development and strategic recommendation options." },
                                 { title: "Phase 4: Executive Delivery", desc: "Final board presentation and implementation roadmap." },
                             ].map((phase, i) => (
-                                <div key={i} className="flex gap-4">
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, x: -10 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.5 + (i * 0.1) }}
+                                    className="flex gap-4"
+                                >
                                     <CheckCircle2 className="w-6 h-6 text-[#73B744] flex-shrink-0 mt-1" />
                                     <div>
                                         <h5 className="text-white font-bold">{phase.title}</h5>
                                         <p className="text-gray-400 text-sm">{phase.desc}</p>
                                     </div>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     </div>
