@@ -1,19 +1,29 @@
 "use client";
 
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
-import { UploadCloud } from "lucide-react";
+import { ArrowRight, UploadCloud } from "lucide-react";
 
 export default function JoinPage() {
     return (
-        <div className="min-h-screen pt-24 pb-12 px-4 bg-[#050505]">
-            <div className="max-w-3xl mx-auto">
-                <div className="text-center mb-12">
-                    <h1 className="text-4xl font-bold font-display text-white mb-4">Student Recruitment</h1>
-                    <p className="text-gray-400 text-lg">Apply to become a consultant for the upcoming cycle.</p>
-                </div>
+        <main className="min-h-screen bg-[#0B0F19]">
+            <Navbar />
 
-                <div className="bg-[#111] border border-white/10 rounded-3xl p-8 md:p-12 shadow-sm">
+            <section className="pt-32 pb-12 px-6 text-center">
+                <div className="container mx-auto max-w-4xl">
+                    <h1 className="text-5xl font-bold font-display text-white mb-6">
+                        Join the Top Tier of <br /> <span className="text-[#73B744]">Student Consultants</span>
+                    </h1>
+                    <p className="text-xl text-gray-400">
+                        Gain real consulting experience, structured training, and exposure to the UAE impact ecosystem.
+                    </p>
+                </div>
+            </section>
+
+            <section className="py-12 px-4">
+                <div className="max-w-3xl mx-auto bg-[#111] border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
                     <form className="space-y-8">
                         {/* Section 1: Personal Details */}
                         <div className="space-y-4">
@@ -51,11 +61,13 @@ export default function JoinPage() {
                         </div>
 
                         <div className="pt-4">
-                            <Button className="w-full py-4 text-lg font-bold">Submit Application</Button>
+                            <Button className="w-full py-4 text-lg font-bold">Submit Application <ArrowRight className="w-5 h-5 ml-2" /></Button>
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
+            </section>
+
+            <Footer />
+        </main>
     );
 }
