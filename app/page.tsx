@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 // Reusing Vision for now as it fits the layout flow, 
 // can be renamed to Impact/CTA later if needed.
-import Vision from "@/components/Vision";
+import Impact from "@/components/Impact"; // New Import
 
 export default function Home() {
   return (
@@ -18,8 +18,8 @@ export default function Home() {
       <Hero />
       <WhatWeDo />
       <ConsultingModel />
+      <Impact />
       <WhyUs />
-      <Vision />
       <Footer />
     </main>
   );
