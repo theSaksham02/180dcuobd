@@ -7,7 +7,8 @@ import Testimonials from "@/components/Testimonials";
 import Students from "@/components/Students";
 import Clients from "@/components/Clients";
 import Partners from "@/components/Partners";
-import News from "@/components/News";
+import Projects from "@/components/Projects";
+import Team from "@/components/Team";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -22,7 +23,8 @@ export default function Home() {
             <Students />
             <Clients />
             <Partners />
-            <News />
+            <Projects />
+            <Team />
             <Footer />
         </main>
     );
