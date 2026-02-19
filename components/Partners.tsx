@@ -27,7 +27,7 @@ export default function Partners() {
                         Are you a corporation, foundation or government entity wishing to support the mission of 180 Degrees Consulting to empower non-profits and cultivate the next generation of social impact leaders? We would love to hear from you and discuss how we can work together!
                     </p>
                     <Link
-                        href="/hire-us"
+                        href="/join"
                         className="text-[#73B744] font-semibold underline underline-offset-4 hover:text-[#5a9636] transition-colors"
                     >
                         Learn more

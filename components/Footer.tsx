@@ -93,23 +93,23 @@ export default function Footer() {
                                 </h4>
                                 <ul className="space-y-3">
                                     <li>
-                                        <Link href="/about" className="text-gray-500 hover:text-[#1a1a1a] transition-colors text-sm">
-                                            Who We Are
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/our-model" className="text-gray-500 hover:text-[#1a1a1a] transition-colors text-sm">
-                                            Our Model
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/team" className="text-gray-500 hover:text-[#1a1a1a] transition-colors text-sm">
-                                            Our Team
-                                        </Link>
-                                    </li>
-                                    <li>
                                         <Link href="/#impact" className="text-gray-500 hover:text-[#1a1a1a] transition-colors text-sm">
                                             Impact
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/#students" className="text-gray-500 hover:text-[#1a1a1a] transition-colors text-sm">
+                                            Students
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/#clients" className="text-gray-500 hover:text-[#1a1a1a] transition-colors text-sm">
+                                            Clients
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/#partners" className="text-gray-500 hover:text-[#1a1a1a] transition-colors text-sm">
+                                            Partners
                                         </Link>
                                     </li>
                                 </ul>
@@ -123,46 +123,12 @@ export default function Footer() {
                                 <ul className="space-y-3">
                                     <li>
                                         <Link href="/join" className="text-gray-500 hover:text-[#1a1a1a] transition-colors text-sm">
-                                            Join a Branch
+                                            Join Us
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/hire-us" className="text-gray-500 hover:text-[#1a1a1a] transition-colors text-sm">
-                                            Work With Us
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/hire-us" className="text-gray-500 hover:text-[#1a1a1a] transition-colors text-sm">
-                                            Become a Partner
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/contact" className="text-gray-500 hover:text-[#1a1a1a] transition-colors text-sm">
-                                            Contact
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            {/* Resources */}
-                            <div>
-                                <h4 className="text-[#1a1a1a] font-semibold text-sm mb-5">
-                                    Resources
-                                </h4>
-                                <ul className="space-y-3">
-                                    <li>
-                                        <Link href="/insights" className="text-gray-500 hover:text-[#1a1a1a] transition-colors text-sm">
-                                            Insights
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/our-work" className="text-gray-500 hover:text-[#1a1a1a] transition-colors text-sm">
-                                            Our Work
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/insights" className="text-gray-500 hover:text-[#1a1a1a] transition-colors text-sm">
-                                            Blog
+                                        <Link href="/signup" className="text-gray-500 hover:text-[#1a1a1a] transition-colors text-sm">
+                                            Sign Up
                                         </Link>
                                     </li>
                                 </ul>
@@ -175,17 +141,9 @@ export default function Footer() {
                         <span className="text-gray-400 text-xs">
                             © {new Date().getFullYear()} 180 Degrees Consulting UoBD. All rights reserved.
                         </span>
-                        <div className="flex items-center gap-6">
-                            <Link href="/privacy" className="text-gray-400 hover:text-[#1a1a1a] transition-colors text-xs underline underline-offset-2">
-                                Privacy Policy
-                            </Link>
-                            <Link href="/terms" className="text-gray-400 hover:text-[#1a1a1a] transition-colors text-xs underline underline-offset-2">
-                                Terms of Service
-                            </Link>
-                            <Link href="/privacy" className="text-gray-400 hover:text-[#1a1a1a] transition-colors text-xs underline underline-offset-2">
-                                Cookies Settings
-                            </Link>
-                        </div>
+                        <span className="text-gray-400 text-xs">
+                            Part of the 180 Degrees Consulting Global Network
+                        </span>
                     </div>
                 </div>
             </div>

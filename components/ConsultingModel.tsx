@@ -97,7 +97,7 @@ export default function ConsultingModel() {
                             We accept client applications on a semester basis. Each engagement
                             operates under structured advisory supervision with clear performance milestones.
                         </p>
-                        <a href="/hire-us" className="inline-flex items-center gap-2 text-white font-semibold text-sm hover:text-gray-300 transition-colors">
+                        <a href="/join" className="inline-flex items-center gap-2 text-white font-semibold text-sm hover:text-gray-300 transition-colors">
                             Submit a Project Brief <ArrowRight className="w-4 h-4" />
                         </a>
                     </div>

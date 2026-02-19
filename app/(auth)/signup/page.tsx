@@ -30,9 +30,7 @@ export default function SignupPage() {
                     <Input label="Password" type="password" placeholder="••••••••" />
 
                     <p className="text-xs text-gray-500 leading-relaxed pt-1">
-                        By creating an account, you agree to our{" "}
-                        <Link href="/terms" className="text-[#73B744] underline hover:text-[#5a9636]">Terms</Link> and{" "}
-                        <Link href="/privacy" className="text-[#73B744] underline hover:text-[#5a9636]">Privacy Policy</Link>.
+                        By creating an account, you agree to our Terms and Privacy Policy.
                     </p>
 
                     <Button className="w-full h-12 text-base mt-2 rounded-md">
@@ -41,10 +39,7 @@ export default function SignupPage() {
                 </form>
 
                 <p className="mt-8 text-sm text-gray-500 text-center">
-                    Already have an account?{" "}
-                    <Link href="/login" className="text-[#73B744] hover:text-[#5a9636] transition-colors font-semibold">
-                        Sign in
-                    </Link>
+                    Already a member? Contact us for access.
                 </p>
             </div>
         </div>

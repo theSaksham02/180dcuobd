@@ -18,7 +18,7 @@ export default function Clients() {
                     </p>
                     <div className="flex flex-wrap items-center gap-6">
                         <Link
-                            href="/hire-us"
+                            href="/join"
                             className="text-[#73B744] font-semibold underline underline-offset-4 hover:text-[#5a9636] transition-colors"
                         >
                             Our services

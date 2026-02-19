@@ -31,7 +31,7 @@ export default function ImpactVideo() {
                 </p>
 
                 <Link
-                    href="/about"
+                    href="/"
                     className="inline-block bg-[#73B744] text-white px-8 py-3.5 rounded-full font-semibold hover:bg-[#5a9636] transition-colors"
                 >
                     Find out more about us

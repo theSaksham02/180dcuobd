@@ -75,7 +75,7 @@ export default function News() {
 
                 <div className="text-center mt-12">
                     <Link
-                        href="/insights"
+                        href="/"
                         className="text-[#73B744] font-semibold underline underline-offset-4 hover:text-[#5a9636] transition-colors"
                     >
                         See All Resources

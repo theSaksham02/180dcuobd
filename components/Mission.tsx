@@ -50,7 +50,7 @@ export default function Mission() {
 
                         <div className="relative z-10">
                             <h4 className="text-2xl font-display font-medium text-white mb-4">The World's Largest Consultancy for Non-Profits</h4>
-                            <a href="/about" className="inline-flex items-center gap-2 text-[#73B744] font-bold hover:text-white transition-colors">
+                            <a href="/" className="inline-flex items-center gap-2 text-[#73B744] font-bold hover:text-white transition-colors">
                                 Read Our Story <ArrowRight className="w-4 h-4" />
                             </a>
                         </div>
