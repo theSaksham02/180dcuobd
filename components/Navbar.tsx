@@ -82,13 +82,13 @@ export default function Navbar() {
                 {/* Mobile Toggle */}
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className="lg:hidden text-[#333] p-2 relative z-50 -mr-2"
+                    className="lg:hidden relative z-[60] -mr-1 w-10 h-10 flex items-center justify-center rounded-xl backdrop-blur-xl bg-white/30 border border-white/40 shadow-lg text-[#333] hover:bg-white/50 transition-all"
                     aria-label="Toggle menu"
                 >
                     {isOpen ? (
-                        <X className="w-6 h-6" />
+                        <X className="w-5 h-5" />
                     ) : (
-                        <Menu className="w-6 h-6" />
+                        <Menu className="w-5 h-5" />
                     )}
                 </button>
             </div>
@@ -96,8 +96,8 @@ export default function Navbar() {
             {/* Mobile Menu */}
             <div
                 className={cn(
-                    "fixed inset-0 bg-white z-40 lg:hidden transition-transform duration-300 ease-in-out",
-                    isOpen ? "translate-x-0" : "translate-x-full"
+                    "fixed top-0 left-0 right-0 bottom-0 w-full h-[100dvh] bg-white z-[55] lg:hidden transition-all duration-300 ease-in-out",
+                    isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
                 )}
             >
                 <div className="flex flex-col pt-24 pb-8 px-6 h-full overflow-y-auto">
