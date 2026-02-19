@@ -8,7 +8,6 @@ import Students from "@/components/Students";
 import Clients from "@/components/Clients";
 import Partners from "@/components/Partners";
 import News from "@/components/News";
-import CTAGrid from "@/components/CTAGrid";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -24,7 +23,6 @@ export default function Home() {
             <Clients />
             <Partners />
             <News />
-            <CTAGrid />
             <Footer />
         </main>
     );
